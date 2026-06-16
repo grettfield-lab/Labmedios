@@ -1,23 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import EquipmentGrid from './components/EquipmentGrid'
-import HowItWorks from './components/HowItWorks'
-import RequestForm from './components/RequestForm'
-import AdminPreview from './components/AdminPreview'
 import Footer from './components/Footer'
+import LandingPage from './pages/LandingPage'
+import GestionPage from './pages/GestionPage'
 
 export default function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <main>
-        <Hero />
-        <EquipmentGrid />
-        <HowItWorks />
-        <RequestForm />
-        <AdminPreview />
-      </main>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/gestion" element={<GestionPage />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
